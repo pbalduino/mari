@@ -1,3 +1,10 @@
+module rail() {
+  minkowski() {
+    cube([10, 7, height / 2]);
+    cylinder(r = 3, h = height / 2);
+  }
+}
+
 module cabin(height, width, depth, thickness) {
   double_thickness = thickness * 2;
   quad_thickness = double_thickness * 2;
@@ -25,17 +32,15 @@ module cabin(height, width, depth, thickness) {
     
     // right rail
     translate([-double_thickness, (depth - 10) / 2, 0])
-    minkowski() {
-      cube([10, 7, height / 2]);
-      cylinder(r = 3, h = height / 2);
-    }
+    rail();
     
     // left rail
     translate([width, (depth - 10) / 2, 0])
-    minkowski() {
-      cube([10, 7, height / 2]);
-      cylinder(r = 3, h = height / 2);
-    }
+    rail();
+    
+    // upper hook
+
+    // lower hook
   }
 }
 height = 300;
