@@ -90,7 +90,7 @@ module house() {
 module elevator() {
   union() {
     base();
-//    house();
+    %house();
 
     translate([0, 0, cabin_heigth($t)])
     cabin();
