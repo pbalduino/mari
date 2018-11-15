@@ -1,4 +1,4 @@
-module rail() {
+module rail(height) {
   minkowski() {
     cube([10, 7, height / 2]);
     cylinder(r = 3, h = height / 2);
@@ -32,20 +32,15 @@ module cabin(height, width, depth, thickness) {
     
     // right rail
     translate([-double_thickness, (depth - 10) / 2, 0])
-    rail();
+    rail(height);
     
     // left rail
     translate([width, (depth - 10) / 2, 0])
-    rail();
+    rail(height);
     
     // upper hook
+    
 
     // lower hook
   }
 }
-height = 300;
-width = 110;
-depth = 110;
-thickness = 5;
-
-cabin(height, width, depth, thickness);
